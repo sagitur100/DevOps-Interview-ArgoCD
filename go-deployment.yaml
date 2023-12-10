@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: go
-        image: ghcr.io/sagitur100/devops-interview-argocd:4.0
+        image: ghcr.io/sagitur100/devops-interview-argocd:8.0
         ports:
         - containerPort: 8080
