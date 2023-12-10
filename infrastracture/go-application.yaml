@@ -7,9 +7,9 @@ metadata:
 spec:                                                                                                      
   project: go-project
   source:
-    repoURL: git@github.com:sagitur100/DevOps-Interview-ArgoCD.git
-    targetRevision: main
-    path: ./go-deployment.yaml
+    repoURL: https://github.com/sagitur100/DevOps-Interview-ArgoCD.git
+    targetRevision: HEAD
+    path: ./
   destination:
     server: https://kubernetes.default.svc
     namespace: go
