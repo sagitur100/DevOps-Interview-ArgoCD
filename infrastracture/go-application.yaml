@@ -1,0 +1,36 @@
+#ArgoCD Project
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: go-project
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  description: 
+  sourceRepos:
+  - '*'
+  destinations:
+  - namespace: go
+    server: https://kubernetes.default.svc
+
+
+#ArgoCD Application
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: go-application
+  namespace: argocd
+spec:                                                                                                      
+  project: go-project
+  source:
+    repoURL: git@github.com:sagitur100/DevOps-Interview-ArgoCD.git
+    targetRevision: main
+    path: ./
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: go
+  syncPolicy:
+    automated: {}
+    syncOptions:
+      - CreateNamespace=true
