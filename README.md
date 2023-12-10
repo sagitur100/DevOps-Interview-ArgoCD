@@ -1,4 +1,4 @@
 # Directeam DevOps interview - ArgoCD
 ![Build Status](https://github.com/directeam-io/DevOps-Interview-ArgoCD/actions/workflows/ci.yml/badge.svg)
 
-Editing to trigger github actions #2
+Editing to trigger github actions #3
