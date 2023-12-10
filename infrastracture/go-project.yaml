@@ -1,0 +1,15 @@
+#ArgoCD Project
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: go-project
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  description:
+  sourceRepos:
+  - '*'
+  destinations:
+  - namespace: go
+    server: https://kubernetes.default.svc

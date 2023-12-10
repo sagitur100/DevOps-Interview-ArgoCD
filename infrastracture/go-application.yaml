@@ -1,20 +1,3 @@
-#ArgoCD Project
-apiVersion: argoproj.io/v1alpha1
-kind: AppProject
-metadata:
-  name: go-project
-  namespace: argocd
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
-spec:
-  description: 
-  sourceRepos:
-  - '*'
-  destinations:
-  - namespace: go
-    server: https://kubernetes.default.svc
-
-
 #ArgoCD Application
 apiVersion: argoproj.io/v1alpha1
 kind: Application
@@ -26,7 +9,7 @@ spec:
   source:
     repoURL: git@github.com:sagitur100/DevOps-Interview-ArgoCD.git
     targetRevision: main
-    path: ./
+    path: ./go-deployment.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: go
